@@ -4,27 +4,32 @@
 
 .App-header {
   background-color: white;
-  margin: 10px 0px;
+  margin: 15px 0px;
   display: flex;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: black;
   text-transform: uppercase;
+  cursor: default;
+  transition-duration: 0.4s;
 }
 
 .App-header:hover {
   background-color: white;
-  margin: 10px 0px;
+  margin: 15px 0px;
   display: flex;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: black;
   text-transform: uppercase;
+  transition-property: all;
   transform: scale(-1, 1);
+  transition-duration: 0.4s;
 }
 
 .browse-fits {
   background-color: black;
+  padding: 0px 10px;
 }
 
 .browse-fits ul {
