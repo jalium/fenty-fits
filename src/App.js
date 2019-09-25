@@ -31,7 +31,7 @@ class App extends Component {
     return (
       <div className="app-container">
         <header className="App-header">
-          <p>Fenty Fits</p>
+          <h1>Fenty Fits</h1>
         </header>
         <div className="browse-fits">
           <ul>{this.displayImgs()}</ul>
