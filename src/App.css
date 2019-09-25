@@ -3,28 +3,28 @@
 }
 
 .App-header {
-  background-color: white;
-  margin: 15px 0px;
+  background-color: black;
+  padding: 10px 0px;
   display: flex;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: black;
+  color: white;
   text-transform: uppercase;
   cursor: default;
-  transition-duration: 0.4s;
+  transition-duration: 0.6s;
 }
 
 .App-header:hover {
-  background-color: white;
-  margin: 15px 0px;
+  background-color: black;
+  padding: 10px 0px;
   display: flex;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: black;
+  color: white;
   text-transform: uppercase;
   transition-property: all;
   transform: scale(-1, 1);
-  transition-duration: 0.4s;
+  transition-duration: 0.6s;
 }
 
 .browse-fits {
@@ -38,6 +38,7 @@
 }
 
 .browse-fits ul li img {
+  position: relative;
   margin: 10px;
   height: 450px;
   border-radius: 3px;
@@ -47,5 +48,6 @@
 .browse-fits ul li img:hover {
   transition: 0.4s;
   margin: 10px;
-  height: 650px;
+  transform: scale(1.4, 1.4);
+  z-index: 100;
 }
