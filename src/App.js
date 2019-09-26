@@ -43,23 +43,34 @@ const imgArray = [
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = "";
+    this.state = { imgInfo: "", clicked: false };
   }
 
   displayImgs = () => {
     return imgArray.map((outfit, i) => (
       <li>
-        <img key={i} src={outfit[0]}></img>
-        <div>
-          key{i} src={outfit[1]}
-        </div>
+        <img
+          key={i}
+          src={outfit[0]}
+          onClick={this.handleClick}
+          alt={outfit[1]}
+        ></img>
       </li>
     ));
   };
 
-  // handleClick = () => {
-  //   this.setState({ toggleCard: !this.state.toggleCard });
+  // displayInfo = () => {
+  //   return imgArray.map((outfit, i) => (
+  //     <li>
+  //       <p> {outfit[1]} </p>
+  //     </li>
+  //   ));
   // };
+
+  handleClick = evt => {
+    console.log(evt.target.alt);
+    this.setState({ clicked: !this.state.clicked, imgInfo: evt.target.alt });
+  };
 
   render() {
     return (
@@ -67,11 +78,11 @@ class App extends Component {
         <header className="App-header">
           <h1>Fenty Fits</h1>
         </header>
-        <div className="browse-fits browse-fits-front">
-          <ul>{this.displayImgs()}</ul>
+        <div className="browse-fits">
+          <ul className="front-img">{this.displayImgs()}</ul>
         </div>
-        {/* <div className="browse-fits browse-fits-back">
-          <ul>{this.displayInfo()}</ul>
+        {/* <div className="info">
+          <ul className="back-info">{this.displayInfo()}</ul>
         </div> */}
       </div>
     );
