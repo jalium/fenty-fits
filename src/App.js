@@ -48,29 +48,28 @@ class App extends Component {
 
   displayImgs = () => {
     return imgArray.map((outfit, i) => (
-      <li>
-        <img
-          key={i}
-          src={outfit[0]}
-          onClick={this.handleClick}
-          alt={outfit[1]}
-        ></img>
+      <li key={i}>
+        <div>
+          <span className="img-holder">
+            <img
+              key={i}
+              src={outfit[0]}
+              onClick={this.handleClick}
+              alt={outfit[1]}
+            ></img>
+          </span>
+          <div className="img-info">
+            <p> {outfit[1]} </p>
+          </div>
+        </div>
       </li>
     ));
   };
 
-  // displayInfo = () => {
-  //   return imgArray.map((outfit, i) => (
-  //     <li>
-  //       <p> {outfit[1]} </p>
-  //     </li>
-  //   ));
+  // handleClick = evt => {
+  //   console.log(evt.target.alt);
+  //   this.setState({ clicked: !this.state.clicked, imgInfo: evt.target.alt });
   // };
-
-  handleClick = evt => {
-    console.log(evt.target.alt);
-    this.setState({ clicked: !this.state.clicked, imgInfo: evt.target.alt });
-  };
 
   render() {
     return (
@@ -79,11 +78,8 @@ class App extends Component {
           <h1>Fenty Fits</h1>
         </header>
         <div className="browse-fits">
-          <ul className="front-img">{this.displayImgs()}</ul>
+          <ul>{this.displayImgs()}</ul>
         </div>
-        {/* <div className="info">
-          <ul className="back-info">{this.displayInfo()}</ul>
-        </div> */}
       </div>
     );
   }
