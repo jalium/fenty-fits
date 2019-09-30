@@ -49,27 +49,23 @@ class App extends Component {
   displayImgs = () => {
     return imgArray.map((outfit, i) => (
       <li key={i}>
-        <div>
-          <span className="img-holder">
-            <img
-              key={i}
-              src={outfit[0]}
-              onClick={this.handleClick}
-              alt={outfit[1]}
-            ></img>
-          </span>
-          <div className="img-info">
-            <p> {outfit[1]} </p>
-          </div>
+        <img
+          key={i}
+          src={outfit[0]}
+          onClick={this.handleClick}
+          alt={outfit[1]}
+        ></img>
+        <div className="img-info">
+          <p> {outfit[1]} </p>
         </div>
       </li>
     ));
   };
 
-  // handleClick = evt => {
-  //   console.log(evt.target.alt);
-  //   this.setState({ clicked: !this.state.clicked, imgInfo: evt.target.alt });
-  // };
+  handleClick = evt => {
+    console.log(evt.target.alt);
+    this.setState({ clicked: !this.state.clicked, imgInfo: evt.target.alt });
+  };
 
   render() {
     return (
